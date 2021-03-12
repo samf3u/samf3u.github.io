@@ -2,12 +2,14 @@
 <head>
     <script src="scripts/Load.js"></script>
     <script>
-        function SaveData(p_data){
-            localStorage.setItem("test", p_data);
+        function SaveData(){
+            var demo = document.getElementById("demo").innerHTML
+            localStorage.setItem("test", demo);
         }
 
         function ReadData(){
-            localStorage.getItem("test");
+            var data = localStorage.getItem("test");
+            document.getElementById("demo").innerHTML = data
         }
     </script>
 </head>
@@ -18,11 +20,14 @@
         <div id="demo">
 
         </div>
-        <button>
+        <button onclick="ReadData()">
             Read
         </button>
-        <button>
+        <button onclick="SaveData()">
             Write
         </button>
+        <div id="display">
+
+        </div>
     </body>
 </html>

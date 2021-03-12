@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <head>
     <script src="scripts/Load.js"></script>
+    <script>
+        function SaveData(p_data){
+            localStorage.setItem("test", p_data);
+        }
+
+        function ReadData(){
+            localStorage.getItem("test");
+        }
+    </script>
 </head>
 <html>
     <body onload="Load()">
@@ -9,5 +18,11 @@
         <div id="demo">
 
         </div>
+        <button>
+            Read
+        </button>
+        <button>
+            Write
+        </button>
     </body>
 </html>

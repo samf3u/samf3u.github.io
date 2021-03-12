@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <head>
     <script>
-        document.getElementById("demo").innerHTML = "Hello JavaScript!";
+        function Load(){
+            document.getElementById("demo").innerHTML = "Hello JavaScript!";
+        }
     </script>
 </head>
 <html>
-    <body>
+    <body onload="Load()">
         <h1>Hello World</h1>
         <p>I'm hosted with GitHub Pagesx.</p>
         <div id="demo">

@@ -3,13 +3,13 @@
     <script src="scripts/Load.js"></script>
     <script>
         function SaveData(){
-            var demo = document.getElementById("demo").innerHTML
+            var demo = document.getElementById("demo").innerHTML;
             localStorage.setItem("test", demo);
         }
 
         function ReadData(){
             var data = localStorage.getItem("test");
-            document.getElementById("demo").innerHTML = data
+            document.getElementById("display").innerHTML = data;
         }
     </script>
 </head>

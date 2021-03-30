@@ -1,6 +1,7 @@
 function Load(){
     var test = getParameterByName('test');
     document.getElementById("demo").innerHTML = '>' + test + '<';
+    
 }
 
 function getParameterByName(name, url = window.location.href) {

@@ -25,11 +25,15 @@
             }
             rawFile.send();
         }
+
+        
     </script>
+
 </head>
 <html>
 
 <body onload="Load()">
+    <?php file_put_contents('data.json', 'test') ?>
     <h1>Hello World</h1>
     <p>I'm hosted with GitHub Pagesx.</p>
     <div id="demo">
@@ -43,6 +47,9 @@
     </button>
     <div id="display">
 
+    </div>
+    <div>
+        <?php echo date('Y/m/d') ?>
     </div>
 </body>
 

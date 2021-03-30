@@ -1,33 +1,49 @@
 <!DOCTYPE html>
+
 <head>
     <script src="scripts/Load.js"></script>
     <script>
-        function SaveData(){
+        function SaveData() {
             var demo = document.getElementById("demo").innerHTML;
+
             localStorage.setItem("test", demo);
         }
 
-        function ReadData(){
+        function ReadData() {
             var data = localStorage.getItem("test");
             document.getElementById("display").innerHTML = data;
+        }
+
+        function readTextFile() {
+            var rawFile = new XMLHttpRequest();
+            rawFile.open("GET", "data.json", true);
+            rawFile.onreadystatechange = function () {
+                if (rawFile.readyState === 4) {
+                    var allText = rawFile.responseText;
+                    document.getElementById("display").innerHTML = allText;
+                }
+            }
+            rawFile.send();
         }
     </script>
 </head>
 <html>
-    <body onload="Load()">
-        <h1>Hello World</h1>
-        <p>I'm hosted with GitHub Pagesx.</p>
-        <div id="demo">
 
-        </div>
-        <button onclick="ReadData()">
-            Read
-        </button>
-        <button onclick="SaveData()">
-            Write
-        </button>
-        <div id="display">
+<body onload="Load()">
+    <h1>Hello World</h1>
+    <p>I'm hosted with GitHub Pagesx.</p>
+    <div id="demo">
 
-        </div>
-    </body>
+    </div>
+    <button onclick="readTextFile()">
+        Read
+    </button>
+    <button onclick="SaveData()">
+        Write
+    </button>
+    <div id="display">
+
+    </div>
+</body>
+
 </html>
